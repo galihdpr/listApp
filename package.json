@@ -14,6 +14,9 @@
   "keywords": [
     "node.js"
   ],
+  "dependencies": {
+    "express": "*"
+  },
   "author": "gadev",
   "license": "ISC",
   "bugs": {
