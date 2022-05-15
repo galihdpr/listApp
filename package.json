@@ -15,7 +15,8 @@
     "node.js"
   ],
   "dependencies": {
-    "express": "*"
+    "express": "*",
+    "mysql2": "*"
   },
   "author": "gadev",
   "license": "ISC",
