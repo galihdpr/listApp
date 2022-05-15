@@ -1,6 +1,7 @@
 const express = require('express');
 const mysql = require('mysql2'); //ubah dari mysql menjadi mysql2
 const app = express();
+const PORT = process.env.PORT || 3000;
 
 //connect the asset and css
 app.use(express.static('public'));
@@ -79,4 +80,4 @@ app.post('/update/:no',(req,res)=>{
     );
 });
 
-app.listen(3000);
+app.listen(PORT);

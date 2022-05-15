@@ -4,6 +4,7 @@
   "description": "simple CRUD web app",
   "main": "listApp.js",
   "scripts": {
+    "start": "node listApp.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
