@@ -1,1 +1,1 @@
-web: node ./listApp.js
+web: node listApp.js
