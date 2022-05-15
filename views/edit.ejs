@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Add New PO</title>
+        <meta name="viewport" content="width = device-width, initial-scale =1.0">
+        <meta name="author" content="Galih DPR">
+        <link rel = "stylesheet" href = "/css/styleApp.css"> <!-- origin stylesheet-->
+        <link rel = "stylesheet" href= "#"> <!-- responsive stylesheet-->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    </head>
+    <body>
+        <div class = "top-wrapper">
+            <div class = "container">
+                <div class = "left-top">
+                    <div class = "icon">
+                        <img src = "/images/logo-listapp.png" alt = "logo">
+                    </div>
+                </div>
+                <div class = "center-top">
+                    <div class = "title">
+                        <h1>ManePO</h1>
+                        <h3>Organize and Manage Your Document</h3>
+                    </div>
+                </div>
+                <div class = "right-top">
+                    <img src = "/images/logo-mtf.png">
+                </div>
+            </div>
+        </div>
+        <div class = "edit-tbl-wrapper">
+            <div class = "container">
+                <div class = "edit-tbl">
+                    <form action = "/update/<%=item.no%>" method = "post">
+                        <label for = "agreement">Agreement</label>
+                        <input name = "agreement" type = "text" maxlength="10">
+                        <label for = "nama">Nama</label>
+                        <input name="nama" type="text">
+                        <label for = "dealer">Dealer</label>
+                        <select name="dealer">
+                            <option value = "TMS_KTP">Tri Mandiri Selaras - Ketapang</option>
+                            <option value = "TMS_PTK">Tri Mandiri Selaras - Pontianak</option>
+                            <option value = "ANZON_KTP">Anzon Autoplaza - Ketapang</option>
+                            <option value = "ANZON_PTK">Anzon Autoplaza - Pontianak</option>
+                            <option value = "ASTRA_DSO_PTK">Astra International - DSO - Pontianak</option>
+                            <option value = "BAC_KTP">Borneo Auto Plaza - Ketapang</option>
+                            <option value = "GEMILANG_PTK">Gemilang Berlian Indah - Kubu Raya - Pontianak</option>
+                            <option value = "GEMILANG_KTP">Gemilang Berlian Indah - Ketapang</option>
+                            <option value = "SUZUKI_PTK">Suzuki Ahmad Yani - Pontianak</option>
+                        </select>
+                        <label for = "cmo">CMO</label>
+                        <select name="cmo">
+                            <option value="adrianS">Adrian Safputra</option>
+                            <option value="ahmadR">Ahmad Radius</option>
+                            <option value="agusJ">Agus Johriyadi</option>
+                            <option value="debyK">Deby Kurniawan</option>
+                            <option value="muhammadF">Muhammad Firdaus</option>
+                            <option value="kurniadi">Kurniadi</option>
+                            <option value="zakarya">Zakarya</option>
+                        </select>
+                        <label for = "status">Status PO</label>
+                        <select name="status">
+                            <option value="on_hand">On Hand</option>
+                            <option value="delivered">Delivered</option>
+                            <option value="cancel">Cancel</option>
+                        </select>
+                        <label for = "tgl_cetak_po">Tanggal Cetak PO</label>
+                        <input name="tgl_cetak_po" type="date">
+                        <label for="tanggal_ambil">Tanggal Diambil</label>
+                        <input name = "tanggal_ambil" type="date">
+                        <label for = "keterangan">Keterangan</label>
+                        <textarea name="keterangan"></textarea>
+                        <button type="submit" value="submit">EDIT</button>
+                        <button class="back-btn" href = "/">BACK</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

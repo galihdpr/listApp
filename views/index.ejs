@@ -1,0 +1,89 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>list app</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width = device-width, initial-scale =1.0">
+        <meta name="author" content="Galih DPR">
+        <link rel = "stylesheet" href = "css/styleApp.css"> <!-- origin stylesheet-->
+        <link rel = "stylesheet" href= "#"> <!-- responsive stylesheet-->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    </head>
+    <body>
+        <div class = "top-wrapper">
+            <div class = "container">
+                <div class = "left-top">
+                    <div class = "icon">
+                        <img src = "images/logo-listapp.png" alt = "logo">
+                    </div>
+                </div>
+                <div class = "center-top">
+                    <div class = "title">
+                        <h1>ManePO</h1>
+                        <h3>Organize and Manage Your Document</h3>
+                    </div>
+                </div>
+                <div class = "right-top">
+                    <img src = "images/logo-mtf.png">
+                </div>
+            </div>
+        </div>
+        <div class = "list-wrapper">
+            <div class = "container">
+                <div class = "btn-add">
+                    <a href="/create" class="add-btn-btn">+ Add PO</a>
+                </div>
+                <div class = "list-content">
+                    <table>
+                        <tr>
+                            <th>No</th>
+                            <th>Agreement No</th>
+                            <th>Nama</th>
+                            <th>CMO</th>
+                            <th>Dealer</th>
+                            <th>Tgl Cetak PO</th>
+                            <th>Status PO</th>
+                            <th>Tanggal Ambil PO</th>
+                            <th>Keterangan</th>
+                            <th></th>
+                            <th></th>
+                        </tr>
+                    </tr>
+                    <% listpo.forEach((list) => {%>
+                    <tr>
+                        <td><%= list.no %></td>
+                        <td><%= list.agreement_no %></td>
+                        <td><%= list.nama %></td>
+                        <td><%= list.cmo %></td>
+                        <td><%= list.dealer %></td>
+                        <td><%= list.tgl_cetak_po %></td>
+                        <td><%= list.status_po %></td>
+                        <td><%= list.tanggal_ambil %></td>
+                        <td><%= list.keterangan %></td>
+                        <td class = "delet-btn">
+                            <form action = "/delete/<%=list.no%>" method = "POST">
+                                <input class="del-btn" type = "submit" value="Delete">
+                            </form>
+                        </td>
+                        <td class = "edit-btn">
+                            <a href="/edit/<%= list.no %>"><div class = "edit-btn-btn">Edit</div></a>
+                        </td>
+                    </tr>
+                <%})%>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <footer>
+            <div class = "container">
+                <div class = "left-footer">
+                    <p>Designed and Developed by :</p>
+                    <p>GADEV</p>
+                </div>
+                <div class = "right-footer">
+                    <img src="images/logo-mtf-white.png" alt ="logo MTF putih">
+                </div>
+            </div>
+        </footer>
+    </body>
+</html>
