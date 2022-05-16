@@ -11,10 +11,11 @@ app.use(express.urlencoded({extended:false}));
 
 //connect to database
 const connection = mysql.createConnection({
-    host : 'localhost', //ini harus localhost jika menggunakan local development
+    host : '127.0.0.1', //ini harus localhost jika menggunakan local development
     user : 'galihdev',
     password : 'ep@unair14',
-    database : 'manepodb' 
+    database : 'manepodb',
+    port : '3306' 
 });
 //display the index page
 app.get('/', (req, res) => {
