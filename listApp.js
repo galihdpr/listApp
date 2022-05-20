@@ -11,12 +11,12 @@ app.use(express.urlencoded({extended:false}));
 
 //connect to database
 const connection = mysql.createConnection({
-    host : '127.0.0.1', //ini harus localhost jika menggunakan local development
-    user : 'galihdev',
-    password : 'ep@unair14',
-    database : 'manepodb',
-    port : '3306' 
-});
+    host : '34.101.36.133', //ini menggunakan Public IP dari GCP
+    user : 'gadev@manepo',
+    password : 'epunair14',
+    database : 'manepodb'
+    } 
+);
 //display the index page
 app.get('/', (req, res) => {
     connection.query(

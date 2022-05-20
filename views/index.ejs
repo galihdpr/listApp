@@ -48,28 +48,27 @@
                             <th></th>
                             <th></th>
                         </tr>
-                    </tr>
-                    <% listpo.forEach((list) => {%>
-                    <tr>
-                        <td><%= list.no %></td>
-                        <td><%= list.agreement_no %></td>
-                        <td><%= list.nama %></td>
-                        <td><%= list.cmo %></td>
-                        <td><%= list.dealer %></td>
-                        <td><%= list.tgl_cetak_po %></td>
-                        <td><%= list.status_po %></td>
-                        <td><%= list.tanggal_ambil %></td>
-                        <td><%= list.keterangan %></td>
-                        <td class = "delet-btn">
-                            <form action = "/delete/<%=list.no%>" method = "POST">
+                        <% listpo.forEach((list) => { %>
+                        <tr>
+                            <td><%= list.no %></td>
+                            <td><%= list.agreement_no %></td>
+                            <td><%= list.nama %></td>
+                            <td><%= list.cmo %></td>
+                            <td><%= list.dealer %></td>
+                            <td><%= list.tgl_cetak_po %></td>
+                            <td><%= list.status_po %></td>
+                            <td><%= list.tanggal_ambil %></td>
+                            <td><%= list.keterangan %></td>
+                            <td class = "delet-btn">
+                                <form action = "/delete/<%=list.no%>" method = "POST">
                                 <input class="del-btn" type = "submit" value="Delete">
-                            </form>
-                        </td>
-                        <td class = "edit-btn">
-                            <a href="/edit/<%= list.no %>"><div class = "edit-btn-btn">Edit</div></a>
-                        </td>
-                    </tr>
-                <%})%>
+                                </form>
+                            </td>
+                            <td class = "edit-btn">
+                                <a href="/edit/<%= list.no %>"><div class = "edit-btn-btn">Edit</div></a>
+                            </td>
+                        </tr>
+                        <% }) %>
                     </table>
                 </div>
             </div>
