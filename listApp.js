@@ -1,84 +1,39 @@
-const express = require('express');
-const mysql = require('mysql2'); //ubah dari mysql menjadi mysql2
-const app = express();
-const PORT = process.env.PORT || 3000;
-
-//connect the asset and css
-app.use(express.static('public'));
-
-//Get value input from the form 
-app.use(express.urlencoded({extended:false}));
-
-//connect to database
-const connection = mysql.createConnection({
-    host : '34.101.36.133', //ini menggunakan Public IP dari GCP
-    user : 'gadev@manepo',
-    password : 'epunair14',
-    database : 'manepodb'
-    } 
-);
-//display the index page
-app.get('/', (req, res) => {
-    connection.query(
-        'SELECT * FROM po_list',
-        (error, results) => {
-            res.render('index.ejs',{listpo : results});
-        }
-    );
-});
-
-//display the create page
-app.get('/create', (req, res) =>{
-    res.render('create.ejs');
-});
-
-//Add route method for creating item
-app.post('/new', (req,res) =>{
-    //insert value from form into database po_list
-    connection.query(
-        'INSERT INTO po_list(agreement_no, nama, cmo, dealer, tgl_cetak_po, status_po, tanggal_ambil, keterangan) VALUES (?,?,?,?,?,?,?,?)',
-        [[req.body.agreement],[req.body.nama],[req.body.cmo],[req.body.dealer],[req.body.tgl_cetak_po],
-        [req.body.status],[req.body.tanggal_ambil],[req.body.keterangan]],
-        (error, results) =>{
-            res.redirect('/');
-        }
-    );
-});    
-
-
-//Add route for deleting items
-app.post('/delete/:no',(req,res)=>{
-    connection.query(
-        'DELETE FROM po_list WHERE no = ?',
-        [req.params.no],
-        (error,results) =>{
-            res.redirect('/');
-        }
-    );
-});
-
-//Add route for edit items, pada project ini
-app.get('/edit/:no',(req,res) =>{
-    connection.query(
-        'SELECT * FROM po_list where no = ?',
-        [req.params.no],
-        (error,results) =>{
-            console.log(results);
-            res.render('edit.ejs',{item : results[0]});
-        }
-    );
-});
-
-// set route to update date
-app.post('/update/:no',(req,res)=>{
-    connection.query(
-        'UPDATE po_list SET agreement_no = ?, nama = ?, cmo = ?, dealer = ?, tgl_cetak_po = ?, status_po = ?, tanggal_ambil = ?, keterangan = ? WHERE no = ?',
-        [[req.body.agreement],[req.body.nama],[req.body.cmo],[req.body.dealer],[req.body.tgl_cetak_po],
-        [req.body.status],[req.body.tanggal_ambil],[req.body.keterangan], [req.params.no]],
-        (error, results) => {
-            res.redirect('/');
-        }
-    );
-});
-
-app.listen(PORT);
+-----BEGIN OPENSSH PRIVATE KEY-----
+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
+-----END OPENSSH PRIVATE KEY-----

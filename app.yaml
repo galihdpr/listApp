@@ -1,1 +1,3 @@
 runtime: nodejs16
+beta_settings:
+  cloud_sql_instances: smartku-350802:asia-southeast2:smartku-manepo=tcp:3002
